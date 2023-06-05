@@ -1,0 +1,10 @@
+[
+{
+  "model": "api_for_payment_app.cardmodel",
+  "pk": 1,
+  "fields": {
+    "card_number": "1111 1112",
+    "balance": 10000000.0
+  }
+}
+]

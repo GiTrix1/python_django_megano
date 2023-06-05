@@ -1,0 +1,220 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="Section">
+      <div class="wrap">
+        <div class="Product">
+          <div class="ProductCard">
+            <div class="ProductCard-look">
+              <div class="ProductCard-photo">
+                  <img src="{{ MEDIA_ROOT }}{{ images.first.image.url }}" alt={{ images.first.image_alt }}/>
+              </div>
+              <div class="ProductCard-picts">
+                {% for image in images %}
+                  <a class="ProductCard-pict ProductCard-pict_ACTIVE" href="{{ MEDIA_ROOT }}{{ image.image.url }}">
+                    <img src="{{ MEDIA_ROOT }}{{ image.image.url }}" alt={{ image.image_alt }}/>
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="ProductCard-desc">
+              <div class="ProductCard-header">
+                <h2 class="ProductCard-title">{{ product.name }}
+                </h2>
+                <div class="ProductCard-info">
+                  <div class="ProductCard-cost">
+                    <div class="ProductCard-price">₽ {{ min_price }}0
+                    </div>
+                  </div>
+                  <div class="ProductCard-compare">
+                      <a class="btn btn_default" href="{% url 'add-good-for-compare' product.id %}">
+                          <img class="btn-icon" src="{% static "assets/img/icons/card/change.svg" %}" alt="change.svg"/>
+                      </a>
+                  </div>
+                </div>
+              </div>
+              <div class="ProductCard-text">
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod
+                  </li>
+                  <li>tempor incididunt ut labore et dolore magna aliqua. Lorem
+                  </li>
+                  <li>ipsum dolor sit ameabore et dolore magna aliqua. Lorem ipsum
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="Tabs Tabs_default">
+            <div class="Tabs-links">
+                <a class="Tabs-link_ACTIVE Tabs-link" href="#description">
+                    <span>{% trans "Описание" %}</span>
+                </a>
+                <a class="Tabs-link" href="#sellers">
+                    <span>{% trans "Продавцы" %}</span>
+                </a>
+                <a class="Tabs-link" href="#addit">
+                    <span>{% trans "Характеристики" %}</span>
+                </a>
+                <a class="Tabs-link" href="#reviews">
+                    <span>{% trans "Отзывы" %} {{ num_review }}</span>
+                </a>
+            </div>
+            <div class="Tabs-wrap">
+              <div class="Tabs-block" id="description">
+                <p>
+                  {{ product.description }}
+                </p>
+
+              </div>
+              <div class="Tabs-block" id="sellers">
+                <div class="Categories Categories_product">
+                  {% for product in sellers_price %}
+                  <div class="Categories-row">
+                    <div class="Categories-block Categories-block_info">
+                      <div class="Categories-info">
+                        <strong>
+                            <a class="btn btn_primary" href="{% url 'seller' product.seller_id %}">
+                                {{ product.seller }}
+                            </a>
+                        </strong>
+                      </div>
+                    </div>
+                    <div class="Categories-splitProps">
+                    </div>
+                    <div class="Categories-block Categories-price">
+                      {% if product.sale %}
+                        <strong><s>₽&#32;{{ product.price_old }}</s></strong>
+                        <p><strong>₽&#32;{{ product.price }}0</strong></p>
+                      {% else %}
+                        <strong>₽&#32;{{ product.price }}
+                        </strong>
+                      {% endif %}
+                    </div>
+{#                    <div class="Categories-block Amount Amount_product">#}
+{#                      <button class="Amount-remove" type="button">#}
+{#                      </button>#}
+{#                      <input class="Amount-input form-input" name="amount" type="text" value="1"/>#}
+{#                      <button class="Amount-add" type="button">#}
+{#                      </button>#}
+{#                    </div>#}
+                    <div class="Categories-block Categories-button">
+                        <a class="btn btn_primary" href="{% url 'add_cart' product_id=product_id product_price=product.price %}">
+                            <img class="btn-icon" src="{% static "assets/img/icons/card/cart_white.svg" %}" alt="cart_white.svg"/>
+                            <span class="btn-content">{% trans "Добавить в корзину" %}</span>
+                        </a>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="Tabs-block" id="addit">
+                <div class="Product-props">
+                {% for group, characteristics in characteristics.items %}
+                  <div class="Product-prop-title">
+                    <strong>{{ group }}</strong>
+                  </div>
+                  {% for characteristic, value in characteristics %}
+                    <div class="Product-prop">
+                      <strong>
+                        {{ characteristic }}
+                      </strong>
+                      <span>{{ value }}</span>
+                    </div>
+                  {% endfor %}
+                {% endfor %}
+                </div>
+              </div>
+              <div class="Tabs-block" id="reviews">
+                <div class="Comments">
+                  {% for review in reviews %}
+                  <div class="Comment">
+                    <div class="Comment-column Comment-column_pict">
+                      <img class="Comment-avatar" src="{{ MEDIA_ROOT }}{{ review.customer.profile.avatar.url }}" alt='avatar'>
+                    </div>
+                    <div class="Comment-column">
+                      <header class="Comment-header">
+                        <div>
+                          <strong class="Comment-title">{{ review.customer.profile.full_name }}
+                          </strong><span class="Comment-date">
+                          &#32;&#32;{{ review.date.day }}/&#32;&#32;{{ review.date.month }}/&#32;&#32;{{ review.date.year }}/
+                          &#32;&#32;{{ review.date.hour }}:{{ review.date.minute }}
+                          </span>
+                        </div>
+                      </header>
+                      <div class="Comment-content">{{ review.description }}
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+
+                  <div class="Pagination">
+                    <div class="Pagination-ins">
+                      {% if reviews.has_previous %}
+                      <a class="Pagination-element Pagination-element_prev" href="?page={{ reviews.previous_page_number }}#reviews">
+                        <img style="margin: 0;" src="{% static "assets/img/icons/prevPagination.svg" %}" alt="prevPagination.svg"/>
+                      </a>
+                      {% endif %}
+                      {% for page in reviews.paginator.page_range %}
+                        {% if reviews.number == page %}
+                        <a class="Pagination-element Pagination-element_current" href="?page={{ page }}#reviews">
+                          <span class="Pagination-text">{{ page }}
+                          </span>
+                        </a>
+                        {% elif page >= reviews.number|add:-2 and page <= reviews.number|add:2 %}
+                        <a class="Pagination-element" href="?page={{ page }}#reviews">
+                          <span class="Pagination-text">{{ page }}
+                          </span>
+                        </a>
+                      {% endif %}
+                      {% endfor %}
+                      {% if reviews.has_next %}
+                      <a class="Pagination-element Pagination-element_prev" href="?page={{ reviews.next_page_number }}#reviews">
+                        <img style="margin: 0;" src="{% static "assets/img/icons/nextPagination.svg" %}" alt="nextPagination.svg"/>
+                      </a>
+                      {% endif %}
+                    </div>
+                  </div>
+
+                  {% if request.user.is_authenticated and can_create_reviews %}
+                  <header class="Section-header Section-header_product">
+                    <h3 class="Section-title">{% trans "Написать отзыв" %}
+                    </h3>
+                  </header>
+                  <div class="Tabs-addComment">
+                    <form class="form" action="/product/{{ product.id }}/" method="post">
+                      {% csrf_token %}
+                      <div class="form-group">
+                        <textarea class="form-textarea" name="description" maxlength="2000" required="" id="id_description" placeholder="{% trans "Ваш отзыв" %}"></textarea>
+                      </div>
+
+                      <div class="form-group">
+                        <button class="btn btn_muted" type="submit">{% trans "Отправить отзыв" %}
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  {% elif request.user.is_authenticated and not can_create_reviews %}
+                  <header class="Section-header Section-header_product">
+                    <h3 class="Section-title">{% trans "Вы уже оставляли отзыв на данный товар" %}
+                    </h3>
+                  </header>
+                  {% else %}
+                  <header class="Section-header Section-header_product">
+                    <h3 class="Section-title">{% trans "Чтобы оставить отзыв, вам нужно" %}
+                      <a href="{% url 'login' %}">{% trans "авторизоваться" %}</a>
+                    </h3>
+                  </header>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

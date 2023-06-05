@@ -1,0 +1,83 @@
+{% load i18n %}
+{# Карточка с информацией о товере #}
+
+{# Примечание: обрамляющий div у разных карточек может иметь разные css-классы, #}
+{# поэтому он здесь не содержится #}
+
+{# TODO: Разобраться с выводом старой и новой цены при наличии скидки на товар #}
+
+  {#  <a class="Card-picture" href="{% url 'product' card.id %}"> #}
+
+  {% if seller_product %}
+  <a class="Card-picture" href="{% url 'product' card.id %}">
+    <img src="{{ MEDIA_ROOT }}{{ card.product.images.first.image.url }}" alt="{{ card.product.images.first.image_alt }}"/>
+  </a>
+  <div class="Card-content">
+    <strong class="Card-title">
+      <a href="{% url 'product' card.id %}">
+        {{ card.name }}
+      </a>
+    </strong>
+    <div class="Card-description">
+      <div class="Card-cost">
+        <span class="Card-price">{{ card.price }}</span>
+      </div>
+      <div class="Card-category">
+        {{ card.category }}/{{ card.category }}
+      </div>
+
+  {% elif card.product_id %}
+  <a class="Card-picture" href="{% url 'product' card.product_id %}">
+    <img src="{{ MEDIA_ROOT }}{{ card.product.images.first.image.url }}" alt="{{ card.product.images.first.image_alt }}"/>
+  </a>
+  <div class="Card-content">
+    <strong class="Card-title">
+      <a href="{% url 'product' card.product_id %}">
+        {{ card.product.name }}
+      </a>
+    </strong>
+    <div class="Card-description">
+      <div class="Card-cost">
+        <span class="Card-price">{{ card.price }}</span>
+      </div>
+      <div class="Card-category">
+        {{ card.product.category }}/{{ card.product.category }}
+      </div>
+  {% elif card.product %}
+        <a class="Card-picture" href="{% url 'product' card.id %}">
+      <img src="{{ MEDIA_ROOT }}{{ card.product.images.first.image.url }}" alt="{{ card.product.images.first.image_alt }}"/>
+    </a>
+    <div class="Card-content">
+      <strong class="Card-title">
+        <a href="{% url 'product' card.id %}">
+          {{ card.name }}
+        </a>
+      </strong>
+      <div class="Card-description">
+        <div class="Card-cost">
+          <span class="Card-price">{{ card.price }}</span>
+        </div>
+        <div class="Card-category">{{ card.category.parent }}/{{ card.category }}
+        </div>
+  {% else %}
+  <a class="Card-picture" href="{% url 'product' card.id %}">
+    <img src="{{ MEDIA_ROOT }}{{ card.images.first.image.url }}" alt="{{ card.images.first.image_alt }}"/>
+  </a>
+  <div class="Card-content">
+    <strong class="Card-title">
+      <a href="{% url 'product' card.id %}">
+        {{ card.name }}
+      </a>
+    </strong>
+    <div class="Card-description">
+      <div class="Card-cost">
+        <span class="Card-price">{{ card.price }}0</span>
+      </div>
+      <div class="Card-category">{{ card.category.parent }}/{{ card.category }}
+      </div>
+  {% endif %}
+
+      {% include 'include/card_hover.html' %}
+
+    </div>
+  </div>

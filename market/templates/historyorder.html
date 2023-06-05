@@ -1,0 +1,52 @@
+{% extends "base/profile_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block profile_content %}
+
+    <div class="Orders">
+        {% if all_order %}
+            {% for order in all_order %}
+                <div class="Order Order_anons">
+                    <div class="Order-personal">
+                        <div class="row">
+                            <div class="row-block"><a class="Order-title" href="http://127.0.0.1:8000/order/detail/{{ order.order_id }}/">
+                                {% trans "Заказ" %}&#32;<span class="Order-numberOrder">№{{ order.order_id }}</span>&#32;{% trans "от" %}&#32;
+                                <span class="Order-dateOrder">{{ order.added_date }}</span></a>
+                            </div>
+                            <div class="row-block">
+                                <div class="Order-info Order-info_delivery">
+                                    <div class="Order-infoType">{% trans "Тип доставки:" %}
+                                    </div>
+                                    <div class="Order-infoContent">{{ order.delivery }}
+                                    </div>
+                                </div>
+                                <div class="Order-info Order-info_pay">
+                                    <div class="Order-infoType">{% trans "Оплата:" %}
+                                    </div>
+                                    <div class="Order-infoContent">{{ order.pay }}
+                                    </div>
+                                </div>
+                                <div class="Order-info">
+                                    <div class="Order-infoType">{% trans "Общая стоимость:" %}
+                                    </div>
+                                    <div class="Order-infoContent"><span class="Order-price">{{ order.total_price }} ₽</span>
+                                    </div>
+                                </div>
+                                <div class="Order-info Order-info_status">
+                                    <div class="Order-infoType">{% trans "Статус:" %}
+                                    </div>
+                                    <div class="Order-infoContent">{{ order.payment_status }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <span>{% trans "Активных заказов пока нет" %}</span>
+        {% endif %}
+    </div>
+
+{% endblock profile_content %}

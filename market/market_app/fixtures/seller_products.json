@@ -1,0 +1,227 @@
+[
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "seller": 1,
+      "qty": 25,
+      "price": "355000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "seller": 2,
+      "qty": 13,
+      "price": "350000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 3,
+    "fields": {
+      "product": 2,
+      "seller": 1,
+      "qty": 30,
+      "price": "280000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 4,
+    "fields": {
+      "product": 2,
+      "seller": 2,
+      "qty": 10,
+      "price": "300000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 5,
+    "fields": {
+      "product": 3,
+      "seller": 1,
+      "qty": 10,
+      "price": "39999.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 6,
+    "fields": {
+      "product": 3,
+      "seller": 2,
+      "qty": 20,
+      "price": "38999.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 7,
+    "fields": {
+      "product": 4,
+      "seller": 1,
+      "qty": 15,
+      "discount": null,
+      "price": "28800.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 8,
+    "fields": {
+      "product": 5,
+      "seller": 1,
+      "qty": 5,
+      "discount": null,
+      "price": "85000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 9,
+    "fields": {
+      "product": 7,
+      "seller": 1,
+      "qty": 15,
+      "discount": null,
+      "price": "27999.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 10,
+    "fields": {
+      "product": 8,
+      "seller": 1,
+      "qty": 25,
+      "discount": null,
+      "price": "29999.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 11,
+    "fields": {
+      "product": 9,
+      "seller": 1,
+      "qty": 15,
+      "discount": null,
+      "price": "13000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 12,
+    "fields": {
+      "product": 10,
+      "seller": 1,
+      "qty": 15,
+      "discount": null,
+      "price": "8000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 13,
+    "fields": {
+      "product": 6,
+      "seller": 1,
+      "qty": 25,
+      "discount": null,
+      "price": "19999.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 14,
+    "fields": {
+      "product": 11,
+      "seller": 1,
+      "qty": 15,
+      "discount": null,
+      "price": "9000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 15,
+    "fields": {
+      "product": 12,
+      "seller": 1,
+      "qty": 9,
+      "discount": null,
+      "price": "89000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 16,
+    "fields": {
+      "product": 13,
+      "seller": 1,
+      "qty": 30,
+      "discount": null,
+      "price": "39000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 17,
+    "fields": {
+      "product": 14,
+      "seller": 1,
+      "qty": 25,
+      "discount": null,
+      "price": "7999.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 18,
+    "fields": {
+      "product": 15,
+      "seller": 1,
+      "qty": 14,
+      "discount": null,
+      "price": "35000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 19,
+    "fields": {
+      "product": 16,
+      "seller": 1,
+      "qty": 15,
+      "discount": null,
+      "price": "75000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 20,
+    "fields": {
+      "product": 17,
+      "seller": 1,
+      "qty": 15,
+      "discount": null,
+      "price": "55000.00"
+    }
+  },
+  {
+    "model": "market_app.sellerproduct",
+    "pk": 21,
+    "fields": {
+      "product": 18,
+      "seller": 1,
+      "qty": 20,
+      "discount": null,
+      "price": "90000.00"
+    }
+  }
+]

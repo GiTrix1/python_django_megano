@@ -1,0 +1,195 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block header_slider %}
+
+  <div class="Header-slider">
+    <div class="Slider Slider_main">
+      <div class="Slider-box">
+
+        {# Список баннеров в слайдере #}
+        {% for banner in slider_banners %}
+
+          <div class="Slider-item">
+            <div class="Slider-content">
+              <div class="row">
+                <div class="row-block">
+                  <strong class="Slider-title">{{ banner.title1 }}<span class="text_primary"> {{ banner.title2 }}</span> {{ banner.title3 }}
+                  </strong>
+                  <div class="Slider-text">{{ banner.text}}
+                  </div>
+                  <div class="Slider-footer">
+                    <a class="btn btn_primary" href="{{ banner.link }}">{{ banner.text_link }}</a>
+                  </div>
+                </div>
+                <div class="row-block">
+                  <div class="Slider-img">
+                    <img src="{{ MEDIA_ROOT }}{{ banner.image.url }}" alt="{{ banner.image_alt }}"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        {% endfor %}
+
+      </div>
+
+      <div class="Slider-navigateWrap">
+        <div class="Slider-navigate">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock header_slider%}
+
+  {% block middle %}
+
+  <div class="Middle">
+    <div class="Section">
+      <div class="wrap">
+        <div class="BannersHome">
+
+          {# Избранные категории #}
+          {% for category in selected_categories %}
+          <a class="BannersHomeBlock" href="{% url 'catalog' %}?category={{ category.id }}">
+            <div class="BannersHomeBlock-row">
+              <div class="BannersHomeBlock-block">
+                <strong class="BannersHomeBlock-title">{{ category.title }}
+                </strong>
+                <div class="BannersHomeBlock-content">{% trans "от " %}<span class="BannersHomeBlock-price">{{ category.min_price }}₽</span>
+                </div>
+              </div>
+              {% if category.image_big %}
+              <div class="BannersHomeBlock-block">
+                <div class="BannersHomeBlock-img"><img src="{{ MEDIA_ROOT }}{{ category.image_big.url }}" alt="{{ category.image_alt }}"/>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  {# T-O-D-O Limited Deals #}
+
+  <div class="Section Section_column Section_columnLeft Section_columnDesktop">
+    <div class="wrap">
+      <div class="Section-column">
+        <div class="Section-columnSection Section-columnSection_mark">
+          <header class="Section-columnHeader">
+            <strong class="Section-columnTitle">Limited Deals
+            </strong>
+          </header>
+          <div class="Card">
+            <a class="Card-picture" href="#">
+              <img src="{% static "assets/img/content/home/card.jpg" %}" alt="card.jpg"/>
+            </a>
+            <div class="Card-content">
+              <strong class="Card-title"><a href="#">Corsair Carbide Series Arctic White Steel</a>
+              </strong>
+              <div class="Card-description">
+                <div class="Card-cost"><span class="Card-priceOld">$115.00</span><span class="Card-price">$85.00</span>
+                </div>
+                <div class="Card-category">News / xbox
+                </div>
+              </div>
+              <div class="CountDown" data-date="31.09.2020 03:59">
+                <div class="CountDown-block">
+                  <div class="CountDown-wrap">
+                    <div class="CountDown-days">
+                    </div><span class="CountDown-label">days</span>
+                  </div>
+                </div>
+                <div class="CountDown-block">
+                  <div class="CountDown-wrap">
+                    <div class="CountDown-hours">
+                    </div><span class="CountDown-label">hours</span>
+                  </div>
+                </div>
+                <div class="CountDown-block">
+                  <div class="CountDown-wrap">
+                    <div class="CountDown-minutes">
+                    </div><span class="CountDown-label">mins</span>
+                  </div>
+                </div>
+                <div class="CountDown-block">
+                  <div class="CountDown-wrap">
+                    <div class="CountDown-secs">
+                    </div><span class="CountDown-label">secs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="Section-content">
+
+        {% include 'include/popular_products.html' with popular_list=popular_list %}
+
+      </div>
+    </div>
+  </div>
+
+  <div class="Section Section_dark">
+    <div class="wrap">
+      <div class="Section-content">
+        <div class="Slider Slider_carousel">
+          <header class="Section-header">
+            <h2 class="Section-title">Hot Offers
+            </h2>
+            <div class="Section-control">
+              <div class="Slider-navigate">
+              </div>
+            </div>
+          </header>
+          <div class="Slider-box Cards Cards_hz">
+
+          {# Список карточек Hot Offers #}
+          {% for card in hot_offer_list|slice:":3" %}
+            {% include 'include/slider_item.html' %}
+          {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="Section Section_column Section_columnRight">
+    <div class="wrap">
+      <div class="Section-column">
+
+        {% include "include/shipping_and_returns.html" %}
+
+      </div>
+      <div class="Section-content">
+        <div class="Slider Slider_carousel">
+          <header class="Section-header Section-header_close">
+            <h2 class="Section-title">Limited edition
+            </h2>
+            <div class="Section-control">
+              <div class="Slider-navigate">
+              </div>
+            </div>
+          </header>
+          <div class="Slider-box Cards">
+
+            {# Список карточек Limited edition #}
+            {% for card in limited_edition_list %}
+              {% include 'include/slider_item.html' %}
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock middle %}

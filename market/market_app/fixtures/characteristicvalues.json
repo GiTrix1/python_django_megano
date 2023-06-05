@@ -1,0 +1,587 @@
+[
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 1,
+    "fields": {
+      "value": "ПК",
+      "characteristic": 1,
+      "product": 1
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 2,
+    "fields": {
+      "value": "ПК",
+      "characteristic": 1,
+      "product": 2
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 3,
+    "fields": {
+      "value": "HP OMEN GT21-0013ur",
+      "characteristic": 2,
+      "product": 1
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 4,
+    "fields": {
+      "value": "Lenovo Legion T7 34IMZ5",
+      "characteristic": 2,
+      "product": 2
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 5,
+    "fields": {
+      "value": "Черный",
+      "characteristic": 3,
+      "product": 1
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 6,
+    "fields": {
+      "value": "Черный",
+      "characteristic": 3,
+      "product": 2
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 7,
+    "fields": {
+      "value": "Ryzen 7 5800X",
+      "characteristic": 4,
+      "product": 1
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 8,
+    "fields": {
+      "value": "Core i7-11700KF",
+      "characteristic": 4,
+      "product": 2
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 9,
+    "fields": {
+      "value": "8",
+      "characteristic": 5,
+      "product": 1
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 10,
+    "fields": {
+      "value": "8",
+      "characteristic": 5,
+      "product": 2
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 11,
+    "fields": {
+      "value": "3.6 ГГц",
+      "characteristic": 6,
+      "product": 2
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 12,
+    "fields": {
+      "value": "3.8 ГГц",
+      "characteristic": 6,
+      "product": 1
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 13,
+    "fields": {
+      "value": "черный",
+      "characteristic": 3,
+      "product": 3
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 14,
+    "fields": {
+      "value": "Polaris PVC 2004RI",
+      "characteristic": 2,
+      "product": 3
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 15,
+    "fields": {
+      "value": "ПК",
+      "characteristic": 1,
+      "product": 15
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 16,
+    "fields": {
+      "value": "ПК",
+      "characteristic": 1,
+      "product": 16
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 17,
+    "fields": {
+      "value": "ПК",
+      "characteristic": 1,
+      "product": 17
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 18,
+    "fields": {
+      "value": "ПК",
+      "characteristic": 1,
+      "product": 18
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 19,
+    "fields": {
+      "value": "DEXP Aquilon O271",
+      "characteristic": 2,
+      "product": 17
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 20,
+    "fields": {
+      "value": "DEXP Aquilon O273",
+      "characteristic": 2,
+      "product": 18
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 21,
+    "fields": {
+      "value": "ARDOR GAMING RAGE H288",
+      "characteristic": 2,
+      "product": 16
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 22,
+    "fields": {
+      "value": "ZET GAMING WARD H285",
+      "characteristic": 2,
+      "product": 15
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 23,
+    "fields": {
+      "value": "черный",
+      "characteristic": 3,
+      "product": 15
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 24,
+    "fields": {
+      "value": "черный",
+      "characteristic": 3,
+      "product": 16
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 25,
+    "fields": {
+      "value": "черный",
+      "characteristic": 3,
+      "product": 17
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 26,
+    "fields": {
+      "value": "черный",
+      "characteristic": 3,
+      "product": 18
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 27,
+    "fields": {
+      "value": "Celeron N4120",
+      "characteristic": 4,
+      "product": 15
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 28,
+    "fields": {
+      "value": "Core i5-12400F",
+      "characteristic": 4,
+      "product": 16
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 29,
+    "fields": {
+      "value": "Core i5-12400F",
+      "characteristic": 4,
+      "product": 17
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 30,
+    "fields": {
+      "value": "Core i3-10105F",
+      "characteristic": 4,
+      "product": 18
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 31,
+    "fields": {
+      "value": "8",
+      "characteristic": 5,
+      "product": 15
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 32,
+    "fields": {
+      "value": "8",
+      "characteristic": 5,
+      "product": 16
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 33,
+    "fields": {
+      "value": "12",
+      "characteristic": 5,
+      "product": 17
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 34,
+    "fields": {
+      "value": "8",
+      "characteristic": 5,
+      "product": 18
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 35,
+    "fields": {
+      "value": "3.6 ГГц",
+      "characteristic": 6,
+      "product": 15
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 36,
+    "fields": {
+      "value": "3.8 ГГц",
+      "characteristic": 6,
+      "product": 16
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 37,
+    "fields": {
+      "value": "3.6 ГГц",
+      "characteristic": 6,
+      "product": 17
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 38,
+    "fields": {
+      "value": "3.8 ГГц",
+      "characteristic": 6,
+      "product": 18
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 39,
+    "fields": {
+      "value": "2022",
+      "characteristic": 7,
+      "product": 1
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 40,
+    "fields": {
+      "value": "2023",
+      "characteristic": 7,
+      "product": 2
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 41,
+    "fields": {
+      "value": "2021",
+      "characteristic": 7,
+      "product": 3
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 42,
+    "fields": {
+      "value": "2020",
+      "characteristic": 7,
+      "product": 4
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 43,
+    "fields": {
+      "value": "2021",
+      "characteristic": 7,
+      "product": 5
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 44,
+    "fields": {
+      "value": "2021",
+      "characteristic": 7,
+      "product": 7
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 45,
+    "fields": {
+      "value": "2019",
+      "characteristic": 7,
+      "product": 8
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 46,
+    "fields": {
+      "value": "2020",
+      "characteristic": 7,
+      "product": 9
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 47,
+    "fields": {
+      "value": "2021",
+      "characteristic": 7,
+      "product": 10
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 48,
+    "fields": {
+      "value": "2022",
+      "characteristic": 7,
+      "product": 6
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 49,
+    "fields": {
+      "value": "2022",
+      "characteristic": 7,
+      "product": 11
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 50,
+    "fields": {
+      "value": "2022",
+      "characteristic": 7,
+      "product": 12
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 51,
+    "fields": {
+      "value": "2022",
+      "characteristic": 7,
+      "product": 13
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 52,
+    "fields": {
+      "value": "2022",
+      "characteristic": 7,
+      "product": 14
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 53,
+    "fields": {
+      "value": "2022",
+      "characteristic": 7,
+      "product": 16
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 54,
+    "fields": {
+      "value": "2022",
+      "characteristic": 7,
+      "product": 15
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 55,
+    "fields": {
+      "value": "2022",
+      "characteristic": 7,
+      "product": 17
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 56,
+    "fields": {
+      "value": "2022",
+      "characteristic": 7,
+      "product": 18
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 57,
+    "fields": {
+      "value": "без ОС",
+      "characteristic": 8,
+      "product": 1
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 58,
+    "fields": {
+      "value": "Windows 11 Home",
+      "characteristic": 8,
+      "product": 2
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 59,
+    "fields": {
+      "value": "IOS",
+      "characteristic": 8,
+      "product": 12
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 60,
+    "fields": {
+      "value": "Android11",
+      "characteristic": 8,
+      "product": 13
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 61,
+    "fields": {
+      "value": "Android9",
+      "characteristic": 8,
+      "product": 14
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 62,
+    "fields": {
+      "value": "без ОС",
+      "characteristic": 8,
+      "product": 15
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 63,
+    "fields": {
+      "value": "без ОС",
+      "characteristic": 8,
+      "product": 16
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 64,
+    "fields": {
+      "value": "без ОС",
+      "characteristic": 8,
+      "product": 17
+    }
+  },
+  {
+    "model": "market_app.characteristicvalue",
+    "pk": 65,
+    "fields": {
+      "value": "без ОС",
+      "characteristic": 8,
+      "product": 17
+    }
+  }
+]

@@ -1,0 +1,163 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="Section Section_column Section_columnLeft">
+      <div class="wrap">
+        <div class="Section-column">
+          <div class="Section-columnSection">
+            <header class="Section-header">
+              <strong class="Section-title">{% trans 'Фильтр' %}
+              </strong>
+            </header>
+            <div class="Section-columnContent">
+              <form class="form" action="{% url 'catalog' %}" method="get">
+                <div class="form-group">
+                  <div class="range Section-columnRange">
+                    <input class="range-line" id="price" name="price" type="text" data-type="double" data-min="7" data-max="1000000" data-from="7" data-to="1000000"/>
+                    <div class="range-price">{% trans 'Цена' %}:&#32;
+                      <div class="rangePrice">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input class="form-input form-input_full" id="title" name="title" type="text" placeholder="{% trans 'Название' %}"/>
+                </div>
+                <div class="form-group">
+                  <select class="form-select">
+                    <option value="seller" selected="selected" disabled="disabled">{% trans 'Продавец' %}
+                    </option>
+                    {% for seller in sellers %}
+                        <option value="{{ seller }}">{{ seller }}
+                        </option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="toggle">
+                    <input name="stock" type="checkbox"/><span class="toggle-box"></span><span class="toggle-text">{% trans 'Только товары в наличии' %}</span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="toggle">
+                    <input type="checkbox"/><span class="toggle-box"></span><span class="toggle-text">{% trans 'С бесплатной доставкой' %}</span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <div class="buttons"><input class="btn btn_square btn_dark btn_narrow" type="submit" value="{% trans 'Фильтр' %}">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="Section-columnSection">
+            <header class="Section-header">
+              <strong class="Section-title">{% trans 'Популярные теги' %}
+              </strong>
+            </header>
+            <div class="Section-columnContent">
+              <div class="buttons">
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Видео' %}</a>
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Разработка' %}</a>
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Игры' %}</a>
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Асус' %}</a>
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Разработка' %}</a>
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Видео' %}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="Section-content">
+          <div class="Sort">
+            <div class="Sort-title">{% trans 'Сортировать по:' %}
+            </div>
+            <div class="Sort-variants">
+                {% if not sort_by %}
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=rating">{% trans 'Популярности' %}</a>
+                    <a class="Sort-sortBy Sort-sortBy_inc" href="?{{ add_url }}&sort_by=price">{% trans 'Цене' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=count_reviews">{% trans 'Отзывам' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=year">{% trans 'Новизне' %}</a>
+                {% elif sort_by == "price" %}
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=rating">{% trans 'Популярности' %}</a>
+                    <a class="Sort-sortBy Sort-sortBy_dec" href="?{{ add_url }}&sort_by=-price">{% trans 'Цене' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=count_reviews">{% trans 'Отзывам' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=year">{% trans 'Новизне' %}</a>
+                {% elif sort_by == "-price" %}
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=rating">{% trans 'Популярности' %}</a>
+                    <a class="Sort-sortBy Sort-sortBy_inc" href="?{{ add_url }}&sort_by=price">{% trans 'Цене' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=count_reviews">{% trans 'Отзывам' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=year">{% trans 'Новизне' %}</a>
+                {% elif sort_by == "count_reviews" %}
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=rating">{% trans 'Популярности' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=-price">{% trans 'Цене' %}</a>
+                    <a class="Sort-sortBy Sort-sortBy_dec" href="?{{ add_url }}&sort_by=-count_reviews">{% trans 'Отзывам' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=year">{% trans 'Новизне' %}</a>
+                {% elif sort_by == "-count_reviews" %}
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=rating">{% trans 'Популярности' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=price">{% trans 'Цене' %}</a>
+                    <a class="Sort-sortBy Sort-sortBy_inc" href="?{{ add_url }}&sort_by=count_reviews">{% trans 'Отзывам' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=year">{% trans 'Новизне' %}</a>
+                {% elif sort_by == "year" %}
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=rating">{% trans 'Популярности' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=-price">{% trans 'Цене' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=-count_reviews">{% trans 'Отзывам' %}</a>
+                    <a class="Sort-sortBy Sort-sortBy_dec" href="?{{ add_url }}&sort_by=-year">{% trans 'Новизне' %}</a>
+                {% elif sort_by == "-year" %}
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=rating">{% trans 'Популярности' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=price">{% trans 'Цене' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=count_reviews">{% trans 'Отзывам' %}</a>
+                    <a class="Sort-sortBy Sort-sortBy_inc" href="?{{ add_url }}&sort_by=year">{% trans 'Новизне' %}</a>
+                {% elif sort_by == "rating" %}
+                    <a class="Sort-sortBy Sort-sortBy_dec" href="?{{ add_url }}&sort_by=-rating">{% trans 'Популярности' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=-price">{% trans 'Цене' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=-count_reviews">{% trans 'Отзывам' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=-year">{% trans 'Новизне' %}</a>
+                {% elif sort_by == "-rating" %}
+                    <a class="Sort-sortBy Sort-sortBy_inc" href="?{{ add_url }}&sort_by=rating">{% trans 'Популярности' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=price">{% trans 'Цене' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=count_reviews">{% trans 'Отзывам' %}</a>
+                    <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=year">{% trans 'Новизне' %}</a>
+                {% endif %}
+            </div>
+          </div>
+          <div class="Cards">
+            {% for card in cards %}
+              <div class="Card{% cycle ' ' ' ' ' ' ' ' ' hide_md' ' hide_md' ' hide_md hide_1450' ' hide_md hide_1450' %}">
+                 {% include 'include/card.html' %}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="Pagination">
+            <div class="Pagination-ins">
+              {% if cards.has_previous %}
+              <a class="Pagination-element Pagination-element_prev" href="?page={{ cards.previous_page_number }}#reviews">
+                <img style="margin: 0;" src="{% static "assets/img/icons/prevPagination.svg" %}" alt="prevPagination.svg"/>
+              </a>
+              {% endif %}
+              {% for page in cards.paginator.page_range %}
+                {% if cards.number == page %}
+                <a class="Pagination-element Pagination-element_current" href="?page={{ page }}#reviews">
+                  <span class="Pagination-text">{{ page }}
+                  </span>
+                </a>
+                {% elif page >= cards.number|add:-2 and page <= cards.number|add:2 %}
+                <a class="Pagination-element" href="?page={{ page }}#reviews">
+                  <span class="Pagination-text">{{ page }}
+                  </span>
+                </a>
+              {% endif %}
+              {% endfor %}
+              {% if cards.has_next %}
+              <a class="Pagination-element Pagination-element_prev" href="?page={{ cards.next_page_number }}#reviews">
+                <img style="margin: 0;" src="{% static "assets/img/icons/nextPagination.svg" %}" alt="nextPagination.svg"/>
+              </a>
+              {% endif %}
+            </div>
+          </div>
+      </div>
+    </div>
+
+{% endblock content %}

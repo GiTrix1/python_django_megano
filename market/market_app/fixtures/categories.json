@@ -1,0 +1,291 @@
+[
+  {
+    "model": "market_app.category",
+    "pk": 1,
+    "fields": {
+      "title": "Компьютеры",
+      "image": "../static/assets/img/icons/departments/1.svg",
+      "image_big": "",
+      "image_alt": "Фото категории",
+      "slug": "kompyutery",
+      "parent": null,
+      "activity": true,
+      "lft": 1,
+      "rght": 8,
+      "tree_id": 1,
+      "level": 0
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 2,
+    "fields": {
+      "title": "Ноутбуки",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "noutbuki",
+      "parent": 1,
+      "activity": true,
+      "lft": 4,
+      "rght": 5,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 3,
+    "fields": {
+      "title": "ПК",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "pk",
+      "parent": 1,
+      "activity": true,
+      "lft": 6,
+      "rght": 7,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 4,
+    "fields": {
+      "title": "Комплектующие",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "komplektuyushie",
+      "parent": 1,
+      "activity": true,
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 5,
+    "fields": {
+      "title": "Крупная бытовая техника",
+      "image": "../static/assets/img/icons/departments/3.svg",
+      "image_big": "",
+      "image_alt": "Фото категории",
+      "slug": "krupnaya-bytovaya-tehnika",
+      "parent": null,
+      "activity": true,
+      "lft": 1,
+      "rght": 10,
+      "tree_id": 2,
+      "level": 0
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 6,
+    "fields": {
+      "title": "Холодильники",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "holodilniki",
+      "parent": 5,
+      "activity": true,
+      "lft": 8,
+      "rght": 9,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 7,
+    "fields": {
+      "title": "Пылесосы",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "pylesosy",
+      "parent": 5,
+      "activity": true,
+      "lft": 4,
+      "rght": 5,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 8,
+    "fields": {
+      "title": "Стиральные машины",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "stiralnye-mashiny",
+      "parent": 5,
+      "activity": true,
+      "lft": 6,
+      "rght": 7,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 9,
+    "fields": {
+      "title": "Печи",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "pechi",
+      "parent": 5,
+      "activity": true,
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 10,
+    "fields": {
+      "title": "Смартфоны",
+      "image": "../static/assets/img/icons/departments/8.svg",
+      "image_big": "",
+      "image_alt": "Фото категории",
+      "slug": "smartfony",
+      "parent": null,
+      "activity": true,
+      "lft": 1,
+      "rght": 8,
+      "tree_id": 4,
+      "level": 0
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 11,
+    "fields": {
+      "title": "айфоны",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "ajfony",
+      "parent": 10,
+      "activity": true,
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 4,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 12,
+    "fields": {
+      "title": "планшеты",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "planshety",
+      "parent": 10,
+      "activity": true,
+      "lft": 6,
+      "rght": 7,
+      "tree_id": 4,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 13,
+    "fields": {
+      "title": "андройд",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "androjd",
+      "parent": 10,
+      "activity": true,
+      "lft": 4,
+      "rght": 5,
+      "tree_id": 4,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 14,
+    "fields": {
+      "title": "Офисная техника",
+      "image": "../static/assets/img/icons/departments/10.svg",
+      "image_big": "",
+      "image_alt": "Фото категории",
+      "slug": "ofisnaya-tehnika",
+      "parent": null,
+      "activity": true,
+      "lft": 1,
+      "rght": 8,
+      "tree_id": 3,
+      "level": 0
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 15,
+    "fields": {
+      "title": "МФУ",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "mfu",
+      "parent": 14,
+      "activity": true,
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 3,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 16,
+    "fields": {
+      "title": "Принтеры",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "printery",
+      "parent": 14,
+      "activity": true,
+      "lft": 4,
+      "rght": 5,
+      "tree_id": 3,
+      "level": 1
+    }
+  },
+  {
+    "model": "market_app.category",
+    "pk": 17,
+    "fields": {
+      "title": "Сканеры",
+      "image": "",
+      "image_big": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото категории",
+      "slug": "skanery",
+      "parent": 14,
+      "activity": true,
+      "lft": 6,
+      "rght": 7,
+      "tree_id": 3,
+      "level": 1
+    }
+  }
+]

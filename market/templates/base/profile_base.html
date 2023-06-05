@@ -1,0 +1,48 @@
+{% extends "base/base.html" %}
+
+{# Базовый шаблон для страниц профиля пользователя  #}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="Section Section_column Section_columnLeft">
+      <div class="wrap">
+        <div class="Section-column">
+          <div class="Section-columnSection">
+            <header class="Section-header">
+              <strong class="Section-title">Навигация
+              </strong>
+            </header>
+            <div class="Section-columnContent">
+              <div class="NavigateProfile">
+                <ul class="menu menu_vt">
+                  <li class="{% if active_menu == 'account' %}menu-item_ACTIVE {% endif %}menu-item">
+                      <a class="menu-link" href="{% url 'account' %}">Личный кабинет</a>
+                  </li>
+                  <li class="{% if active_menu == 'profile' %}menu-item_ACTIVE {% endif %}menu-item">
+                      <a class="menu-link" href="{% url 'profile' %}">Профиль</a>
+                  </li>
+                  <li class="{% if active_menu == 'historyorder' %}menu-item_ACTIVE {% endif %}menu-item">
+                      <a class="menu-link" href="{% url 'historyorder' %}">История заказов</a>
+                  </li>
+                  <li class="{% if active_menu == 'historyview' %}menu-item_ACTIVE {% endif %}menu-item">
+                      <a class="menu-link" href="{% url 'historyview' %}">История просмотра</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="Section-content">
+
+          {% block profile_content %}
+          {# Блок, расположенный справа от меню навигации по профилю #}
+          {% endblock %}
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

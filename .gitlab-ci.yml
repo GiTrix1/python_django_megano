@@ -1,0 +1,52 @@
+stages:
+  - code quality
+  - testing
+
+default:
+  image: python:3.8.12
+  tags:
+    - students
+  cache:
+    paths:
+      - ~/.cache/pip/
+  before_script:
+    - pip install -r requirements/dev.txt
+
+services:
+  - name: redis:latest
+    alias: broker
+  - name: postgres:latest
+    alias: db
+
+variables:
+  POSTGRES_DB: marketplace
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_HOST_AUTH_METHOD: trust
+
+flake8:
+  stage: code quality
+  script:
+    - flake8 market
+
+linter:
+  stage: code quality
+  script:
+    - pylint --rcfile=.pylintrc market/*
+
+test:
+  stage: code quality
+  variables:
+    DATABASE_URL: "postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@db:5432/$POSTGRES_DB"
+    REDIS_URL: "redis://broker:6379/0"
+  script:
+    - echo "PATH_SETTINGS_CONFIG=../settings.json" >> .env
+    - echo "NAME=$POSTGRES_DB" >> .env
+    - echo "USER=$POSTGRES_USER" >> .env
+    - echo "PASSWORD=$POSTGRES_PASSWORD" >> .env
+    - echo "HOST=db" >> .env
+    - echo "PORT=5432" >> .env
+    - cd market
+    - python manage.py makemigrations
+    - python manage.py test
+

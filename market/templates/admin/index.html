@@ -1,0 +1,9 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+
+{% block content %}
+<a style="font-size:20px;" href="{% url 'settings' %}">Страница настроек сайта</a>
+<div id="content-main">
+  {% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}
+</div>
+{% endblock %}

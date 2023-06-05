@@ -1,0 +1,66 @@
+[
+  {
+    "model": "market_app.characteristic",
+    "pk": 1,
+    "fields": {
+      "characteristic_name": "Тип",
+      "group": 1
+    }
+  },
+  {
+    "model": "market_app.characteristic",
+    "pk": 2,
+    "fields": {
+      "characteristic_name": "Модель",
+      "group": 1
+    }
+  },
+  {
+    "model": "market_app.characteristic",
+    "pk": 3,
+    "fields": {
+      "characteristic_name": "Основной цвет",
+      "group": 1
+    }
+  },
+  {
+    "model": "market_app.characteristic",
+    "pk": 4,
+    "fields": {
+      "characteristic_name": "Модель процессора",
+      "group": 2
+    }
+  },
+  {
+    "model": "market_app.characteristic",
+    "pk": 5,
+    "fields": {
+      "characteristic_name": "Количество ядер процессора",
+      "group": 2
+    }
+  },
+  {
+    "model": "market_app.characteristic",
+    "pk": 6,
+    "fields": {
+      "characteristic_name": "Частота процессора",
+      "group": 2
+    }
+  },
+  {
+    "model": "market_app.characteristic",
+    "pk": 7,
+    "fields": {
+      "characteristic_name": "год выпуска",
+      "group": 1
+    }
+  },
+  {
+    "model": "market_app.characteristic",
+    "pk": 8,
+    "fields": {
+      "characteristic_name": "Операционная система",
+      "group": 3
+    }
+  }
+]

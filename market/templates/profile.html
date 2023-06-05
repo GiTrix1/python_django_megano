@@ -1,0 +1,64 @@
+{% extends "base/profile_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block profile_content %}
+
+  {# T-O-D-O: Взять информацию из профиля пользователя #}
+
+  <div class="Profile">
+      <form class="form Profile-form" method="post" enctype="multipart/form-data">
+
+          {% csrf_token %}
+
+          <div class="row">
+              <div class="row-block">
+                  <div class="form-group">
+                      <label class="form-label" for="avatar">{% trans "Аватар" %}
+                      </label>
+                      <div class="Profile-avatar Profile-avatar_noimg">
+                          <div class="Profile-img">
+                              <img src="../../media/{{ profile.avatar.avatar }}" alt="#.png"/>
+                          </div>
+                      </div>
+                      <button class="btn btn_success">{{ profile_form.avatar }}</button>
+                  </div>
+                  <div class="form-group">
+                      <label class="form-label" for="name">{% trans "ФИО" %}
+                      </label>
+                      {{ profile_form.full_name }}
+                  </div>
+              </div>
+              <div class="row-block">
+                  <div class="form-group">
+                      <label class="form-label" for="phone">{% trans "Телефон" %}
+                      </label>
+                      <input class="form-input" id="phone" name="phone" type="text" value='{{ profile_form.phone }}'>
+                  </div>
+                  <div class="form-group">
+                      <label class="form-label" for="mail">{% trans "E-mail" %}
+                      </label>
+                      {{ profile_form.email }}
+                  </div>
+                  <div class="form-group">
+                      <label class="form-label" for="password">{% trans "Пароль" %}
+                      </label>
+                      {{ profile_form.new_password1 }}
+                  </div>
+                  <div class="form-group">
+                      <label class="form-label" for="passwordReply">{% trans "Подтверждение пароля" %}
+                      </label>
+                      {{ profile_form.new_password2 }}
+                  </div>
+                  <div class="form-group">
+                      <div class="Profile-btn">
+                          <button class="btn btn_success" type="submit">{% trans "Сохранить" %}
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+
+{% endblock %}

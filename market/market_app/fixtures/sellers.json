@@ -1,0 +1,22 @@
+[
+  {
+    "model": "market_app.seller",
+    "pk": 1,
+    "fields": {
+      "profile": 1,
+      "description": "Магазин товаров для тела и души.\r\nШирокий выбор ассортимента.\r\nВысокое качаство по доступной цене",
+      "name": "GoodPeople",
+      "logo": "../static/assets/img/content/blackandwhite_3.jpg"
+    }
+  },
+  {
+    "model": "market_app.seller",
+    "pk": 2,
+    "fields": {
+      "profile": 2,
+      "description": "У нас вы найдете товары для детей.\r\nСчастлив малыш - счастлива мама.\r\nЭкономия вашего бюджета - залог душевного равновесия!",
+      "name": "BabyTown",
+      "logo": "../static/assets/img/content/boy.jpg"
+    }
+  }
+]

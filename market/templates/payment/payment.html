@@ -1,0 +1,11 @@
+{% extends "base/payment_base.html" %}
+{% load i18n %}
+
+{% block payment_card %}
+
+    <div class="form-group">
+      <label class="form-label">{% trans 'Номер карты' %}</label>
+      <input class="form-input Payment-bill" id="numero1" name="card_number" type="text" placeholder="9999 9999" data-mask="9999 9999" data-validate="require pay"/>
+    </div>
+
+{% endblock payment_card %}

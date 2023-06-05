@@ -1,0 +1,48 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block body_header %}
+{% endblock body_header %}
+
+{% block content %}
+<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+          <input name="next" type="hidden" value="{{ redirect_to }}">
+          <select name="language">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                </option>
+            {% endfor %}
+          </select>
+          <input type="submit" value="Go">
+        </form>
+<div class="wrap">
+  <article class="Article">
+    <div class="Article-section">
+      <h2>{% trans "Настройки сайта" %}</h2>
+      <form method="post" action="">
+        {% csrf_token %}
+        {{ settings_forms.as_p }}
+        <button type="submit">{% trans "Сохранить" %}</button>
+      </form>
+    </div>
+    <div class="Article-section">
+      <h2>{% trans "Сброс кэша" %}</h2>
+      <form method="post" action="">
+        {% csrf_token %}
+        {% for section in sections %}
+        <p>
+          <button type="submit" name={{ section.0 }} value={{ section.0 }}>{% trans "Сбросить кэш раздела:" %} {{ section.1 }}
+          </button>
+        </p>
+        {% endfor %}
+      </form>
+    </div>
+  </article>
+</div>
+
+{% endblock content %}

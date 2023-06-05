@@ -1,0 +1,78 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="Section Section_column Section_columnRight Section_columnWide">
+      <div class="wrap">
+        <div class="Section-column">
+
+          {% include "include/shipping_and_returns.html" %}
+
+          {% include "include/follow_us.html" %}
+
+        </div>
+        <div class="Section-content">
+          <div class="Map">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aab0c930ee3de165a0eaa7eab3c5e810a0019bf38d9c3e3b44ca793b8ba10aad9&amp;amp;width=100%25&amp;amp;height=486&amp;amp;lang=ru_RU&amp;amp;scroll=true"></script>
+          </div>
+          <div class="Contacts Contacts_main">
+            <div class="Contacts-block">
+              <div class="media">
+                <div class="media-image">
+                    <img src="{% static "assets/img/icons/contacts/phone.svg" %}" alt="phone.svg"/>
+                </div>
+                <div class="media-content">Phone: +8 (200) 800-2000-600<br>Mobile: +8 (200) 800-2000-650
+                </div>
+              </div>
+            </div>
+            <div class="Contacts-block">
+              <div class="media">
+                <div class="media-image">
+                    <img src="{% static "assets/img/icons/contacts/address.svg" %}" alt="address.svg"/>
+                </div>
+                <div class="media-content">
+                  Megano Business Center,
+                  0012 United States, Los Angeles
+                  Creative Street 15/4
+                </div>
+              </div>
+            </div>
+            <div class="Contacts-block">
+              <div class="media">
+                <div class="media-image">
+                    <img src="{% static "assets/img/icons/contacts/mail.svg" %}" alt="mail.svg"/>
+                </div>
+                <div class="media-content">General: hello@ninzio.com<br>Editor: editor@ninzio.com
+                </div>
+              </div>
+            </div>
+          </div>
+          <header class="Section-header Section-header_sm">
+            <h2 class="Section-title">Contact Form
+            </h2>
+          </header>
+          <form class="form form_contacts" action="#" method="post">
+            <div class="form-group">
+              <div class="row">
+                <div class="row-block">
+                  <input class="form-input" id="name" name="name" type="text" placeholder="Name"/>
+                </div>
+                <div class="row-block">
+                  <input class="form-input" id="mail" name="mail" type="text" placeholder="Email"/>
+                </div>
+                <div class="row-block">
+                  <input class="form-input" id="site" name="site" type="text" placeholder="Website"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-textarea" name="message" id="message" placeholder="Message"></textarea>
+            </div>
+            <div class="form-group"><a class="btn btn_muted form-btn" href="#">Send Message</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

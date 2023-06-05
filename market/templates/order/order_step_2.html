@@ -1,0 +1,51 @@
+{% extends "base/order_base.html" %}
+{% load i18n %}
+
+{% block order_step %}
+    <form class="form" action="#" method="post">
+        {% csrf_token %}
+        <div class="Order-block Order-block_OPEN" id="step2">
+            <header class="Section-header Section-header_sm">
+                <h2 class="Section-title">{% trans 'Шаг 2. Способ доставки' %}
+                </h2>
+            </header>
+            <div class="form-group">
+                {% if not delivery or delivery == "ordinary" %}
+                    <div>
+                        <label class="toggle">
+                            <input type="radio" name="delivery" value="ordinary" checked="checked" /><span class="toggle-box"></span><span class="toggle-text">{% trans 'Обычная доставка' %}</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="toggle">
+                            <input type="radio" name="delivery" value="express" /><span class="toggle-box"></span><span class="toggle-text">{% trans 'Экспресс доставка' %}</span>
+                        </label>
+                    </div>
+                {% elif delivery == "express" %}
+                    <div>
+                        <label class="toggle">
+                            <input type="radio" name="delivery" value="ordinary" /><span class="toggle-box"></span><span class="toggle-text">{% trans 'Обычная доставка' %}</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="toggle">
+                            <input type="radio" name="delivery" value="express" checked="checked" /><span class="toggle-box"></span><span class="toggle-text">{% trans 'Экспресс доставка' %}</span>
+                        </label>
+                    </div>
+                {% endif%}
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="city">{% trans 'Город' %}
+                </label>
+                <input class="form-input" id="city" name="city" type="text" value="{{city}}" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="address">{% trans 'Адрес' %}
+                </label>
+                <textarea class="form-textarea" name="address" id="address">{{address}}</textarea>
+            </div>
+            <div class="Order-footer"><button type="submit" class="btn btn_success">{% trans 'Дальше' %}</button>
+            </div>
+        </div>
+    </form>
+{% endblock order_step %}

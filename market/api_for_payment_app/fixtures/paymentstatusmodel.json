@@ -1,0 +1,50 @@
+[
+{
+  "model": "api_for_payment_app.paymentstatusmodel",
+  "pk": 1,
+  "fields": {
+    "status_code": "S404",
+    "status_description": "Ошибка: указанный номер карты не найден"
+  }
+},
+{
+  "model": "api_for_payment_app.paymentstatusmodel",
+  "pk": 2,
+  "fields": {
+    "status_code": "S000",
+    "status_description": "Ошибка: в вашей корзине нет товаров"
+  }
+},
+{
+  "model": "api_for_payment_app.paymentstatusmodel",
+  "pk": 3,
+  "fields": {
+    "status_code": "S403",
+    "status_description": "Ошибка: на балансе недостаточно средств"
+  }
+},
+{
+  "model": "api_for_payment_app.paymentstatusmodel",
+  "pk": 4,
+  "fields": {
+    "status_code": "S200",
+    "status_description": "Оплата прошла успешно"
+  }
+},
+{
+  "model": "api_for_payment_app.paymentstatusmodel",
+  "pk": 5,
+  "fields": {
+    "status_code": "S204",
+    "status_description": "Ошибка: не удалось связаться с банком"
+  }
+},
+{
+  "model": "api_for_payment_app.paymentstatusmodel",
+  "pk": 6,
+  "fields": {
+    "status_code": "S001",
+    "status_description": "Ошибка: ваш заказ не найден"
+  }
+}
+]

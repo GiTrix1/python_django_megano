@@ -1,0 +1,35 @@
+{% extends "base/profile_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block profile_content %}
+
+  <div class="Cards">
+
+    {# В исходном макете в истории выводятся первые 18 карточек #}
+    {# и еще 2 с css-классом hide_1450 #}
+    {% if history_view_list %}
+      {% for card in history_view_list|slice:":18" %}
+          <div class="Card">
+            {% include 'include/card.html' %}
+          </div>
+      {% endfor %}
+    {% else %}
+        <span>{% trans "Вы пока не просмотрели ни один товар" %}</span>
+    {% endif %}
+
+    {% if history_view_list %}
+      {% for card in history_view_list|slice:"18:" %}
+
+        <div class="Card hide_1450">
+          {% include 'include/card.html' %}
+        </div>
+
+      {% endfor %}
+    {% else %}
+        <span>{% trans "Вы пока не просмотрели ни один товар" %}</span>
+    {% endif %}
+
+  </div>
+
+{% endblock profile_content%}

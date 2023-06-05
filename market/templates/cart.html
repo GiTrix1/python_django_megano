@@ -1,0 +1,69 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="Middle Middle_top">
+        <div class="Section">
+            <div class="wrap">
+                <form class="form Cart" method="post">
+                    {% if context %}
+                        {% for item in context %}
+                            <div class="Cart-product">
+                                <div class="Cart-block Cart-block_row">
+                                    <div class="Cart-block Cart-block_pict">
+                                        <a class="Cart-pict" href="http://127.0.0.1:8000/product/{{ item.id }}">
+                                            <img class="Cart-img" src="{{ item.image }}" alt="{{ item.image_alt }}"/>
+                                        </a>
+                                    </div>
+                                    <div class="Cart-block Cart-block_info"><a class="Cart-title" href="http://127.0.0.1:8000/product/{{ item.id }}">{{ item.name }}</a>
+                                        <div class="Cart-desc">{{ item.description }}
+                                        </div>
+                                    </div>
+                                    <div class="Cart-block Cart-block_price">
+                                        <div class="Cart-price">{{ item.price }}$
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Cart-block Cart-block_row">
+                                    <div class="Cart-block Cart-block_seller">
+                                        <!-- - var options = setOptions(items, ['value', 'selected', 'disabled']);-->
+
+                                    </div>
+                                    <div class="Cart-block Cart-block_amount">
+                                        <div class="Cart-amount">
+                                            <div class="Amount">
+                                                <button class="Amount-remove" type="button" onclick="document.location='{% url 'del_one_cart' product_id=item.id %}'">
+                                                </button>
+                                                <p class="Amount-input form-input">{{ item.count }}</p>
+                                                <button class="Amount-add" type="button" onclick="document.location='{% url 'add_one_cart' product_id=item.id %}'">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Cart-block Cart-block_delete">
+                                        <a class="Cart-delete" href="{% url 'del_product_cart' product_id=item.id %}">
+                                            <img src="{% static "assets/img/icons/card/delete.svg" %}" alt="delete.svg"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="Cart-total">
+                        <div class="Cart-block Cart-block_total">
+                            <strong class="Cart-title">{% trans 'Итого:' %}
+                            </strong><span class="Cart-price">{{ total_price }}$</span>
+                        </div>
+                        <div class="Cart-block"><a class="btn btn_success btn_lg" href="{% url 'order_step_1' %}">{% trans 'Оформить заказ' %}</a>
+                        </div>
+                    </div>
+                    {% else %}
+                        <div class="Cart-block Cart-block_info">{% trans 'Корзина пуста' %}</div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

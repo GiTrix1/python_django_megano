@@ -1,0 +1,101 @@
+{% extends "base/profile_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block profile_content %}
+
+    <div class="Account">
+        <div class="Account-group">
+            <div class="Account-column">
+                <div class="Account-avatar"><img src="../media/{{ profile.avatar.avatar }}" alt="card.jpg"/>
+                </div>
+            </div>
+            <div class="Account-column">
+                <div class="Account-name">{{ profile.full_name }}
+                </div><a class="Account-editLink" href="{% url 'profile' %}">{% trans "Редактировать профиль" %}</a>
+            </div>
+        </div>
+        <div class="Account-group">
+            <div class="Account-column Account-column_full">
+                {% if oneorder %}
+                    {% for order in oneorder %}
+                        <div class="Order Order_anons">
+                            <div class="Order-personal">
+                                <div class="row">
+                                    <div class="row-block">
+                                        <a class="Order-title" href="../order/detail/{{ order.order_id }}/">
+                                            {% trans "Заказ" %}&#32;<span class="Order-numberOrder">№{{ order.order_id }}
+                                            </span>&#32;{% trans "от" %}&#32;<span class="Order-dateOrder">{{ order.added_date }}</span></a>
+                                        <div class="Account-editLink">
+                                            <a href="{% url 'historyorder' %}">{% trans "История заказов" %}</a>
+                                        </div>
+                                    </div>
+                                    <div class="row-block">
+                                        <div class="Order-info Order-info_delivery">
+                                            <div class="Order-infoType">{% trans "Тип доставки:" %}
+                                            </div>
+                                            <div class="Order-infoContent">{{ order.delivery }}
+                                            </div>
+                                        </div>
+                                        <div class="Order-info Order-info_pay">
+                                            <div class="Order-infoType">{% trans "Оплата:" %}
+                                            </div>
+                                            <div class="Order-infoContent">{{ order.pay }}
+                                            </div>
+                                        </div>
+                                        <div class="Order-info">
+                                            <div class="Order-infoType">{% trans "Общая стоимость:" %}
+                                            </div>
+                                            <div class="Order-infoContent">{{ order.total_price }} ₽
+                                            </div>
+                                        </div>
+                                        <div class="Order-info Order-info_status">
+                                            <div class="Order-infoType">{% trans "Статус:" %}
+                                            </div>
+                                            <div class="Order-infoContent">{{ order.payment_status }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <span>{% trans "Активных заказов пока нет" %}</span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="Account-group">
+            <div class="Account-column Account-column_full">
+                <header class="Section-header">
+                    <h2 class="Section-title">{% trans "История просмотров" %}
+                    </h2>
+                </header>
+
+                {# История просмотров #}
+
+                {% if history_view_list %}
+                    <div class="Cards Cards_account">
+                        {# На этой странице выводим не более 3 заказов #}
+                        {% for card in history_view_list|slice:":3" %}
+
+                            <div class="Card{% cycle ' ' ' hide_700' ' hide_md' %}">
+                                {% include 'include/card.html' %}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+                    <div class="Account-editLink Account-editLink_view">
+                        <a href="{% url 'historyview' %}">{% trans "Перейти на полный список" %}</a>
+                    </div>
+
+                {% else %}
+                    <span>{% trans "Вы пока не просмотрели ни один товар" %}</span>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock profile_content %}

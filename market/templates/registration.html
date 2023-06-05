@@ -1,0 +1,29 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Регистрация" %}</title>
+</head>
+<body>
+{% block content %}
+    <div class="wrapper">
+        <div class="header">
+            <h3 class="sign-in">{% trans "Регистрация" %}</h3>
+
+        </div>
+        <div class="clear"></div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="{% trans "Зарегистрироваться" %}" />
+
+            <div class="clear"></div>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>

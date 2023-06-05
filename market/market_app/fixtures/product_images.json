@@ -1,0 +1,209 @@
+[
+  {
+    "model": "market_app.productimage",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "image": "../static/assets/img/content/products/PCOmen.png",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "image": "../static/assets/img/content/products/PCOmen.png",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 3,
+    "fields": {
+      "product": 1,
+      "image": "../static/assets/img/content/home/videoca.png",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 4,
+    "fields": {
+      "product": 1,
+      "image": "../static/assets/img/content/home/bigGoods2.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 5,
+    "fields": {
+      "product": 2,
+      "image": "../static/assets/img/content/products/PCLenovo.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 6,
+    "fields": {
+      "product": 2,
+      "image": "../static/assets/img/content/products/PCLenovo.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 7,
+    "fields": {
+      "product": 3,
+      "image": "../static/assets/img/content/products/vacuum.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 8,
+    "fields": {
+      "product": 3,
+      "image": "../static/assets/img/content/products/vacuum.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 9,
+    "fields": {
+      "product": 4,
+      "image": "../static/assets/img/content/products/display.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 10,
+    "fields": {
+      "product": 5,
+      "image": "../static/assets/img/content/home/bigGoods.png",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 11,
+    "fields": {
+      "product": 6,
+      "image": "../static/assets/img/content/products/pech.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 12,
+    "fields": {
+      "product": 7,
+      "image": "../static/assets/img/content/products/washm.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 13,
+    "fields": {
+      "product": 8,
+      "image": "../static/assets/img/content/products/froz.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 14,
+    "fields": {
+      "product": 9,
+      "image": "../static/assets/img/content/products/mfu.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 15,
+    "fields": {
+      "product": 10,
+      "image": "../static/assets/img/content/products/printer.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 16,
+    "fields": {
+      "product": 11,
+      "image": "../static/assets/img/content/products/scan.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 17,
+    "fields": {
+      "product": 12,
+      "image": "../static/assets/img/content/products/iphone.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 18,
+    "fields": {
+      "product": 13,
+      "image": "../static/assets/img/content/products/android.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 19,
+    "fields": {
+      "product": 14,
+      "image": "../static/assets/img/content/products/tablet.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 20,
+    "fields": {
+      "product": 15,
+      "image": "../static/assets/img/content/products/PC3.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 21,
+    "fields": {
+      "product": 16,
+      "image": "../static/assets/img/content/products/PC3.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 22,
+    "fields": {
+      "product": 17,
+      "image": "../static/assets/img/content/products/PC3.jpg",
+      "image_alt": "Фото к товару"
+    }
+  },
+  {
+    "model": "market_app.productimage",
+    "pk": 23,
+    "fields": {
+      "product": 18,
+      "image": "../static/assets/img/content/products/PC3.jpg",
+      "image_alt": "Фото к товару"
+    }
+  }
+]

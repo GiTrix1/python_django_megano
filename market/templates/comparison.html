@@ -1,0 +1,84 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load compare_app_templatetags %}
+{% load i18n %}
+
+
+{% block content %}
+    <div class="Product">
+        {% if products_for_compare_dict %}
+            <div class="ProductCard">
+                {% for product_name, dict_with_product_elems in products_for_compare_dict.items %}
+                    <div class="ProductCard-desc">
+                        <div class="ProductCard-header">
+                            <h2 class="ProductCard-title">{{ product_name }}
+                            </h2>
+
+                            {% for elem_key, elem_value in dict_with_product_elems.items %}
+                                {% if elem_key == "image_path" %}
+                                    <div class="ProductCard-look">
+                                        <div class="ProductCard-photo">
+                                            <img src="/media/{{elem_value}}" alt="{% trans 'Не удалось загрузить изображение' %}" />
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% for elem_key, elem_value in dict_with_product_elems.items %}
+                                {% if elem_key == "characteristics" %}
+                                    <div class="Tabs Tabs_default">
+                                        <div class="Tabs-wrap">
+                                            <div class="Tabs-block" id="description">
+                                                <div class="table">
+                                                    <table>
+                                                        <tr>
+                                                            <th class="hed">{% trans 'Характеристика' %}</th>
+                                                            <th class="hed">{% trans 'Значение' %}</th>
+                                                        </tr>
+                                                        {% for group_name, characteristics_lists in elem_value.items %}
+                                                            <tr>
+                                                                <td><b>{{ group_name }}</b></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            {% for characteristic_list in characteristics_lists %}
+                                                                <tr>
+                                                                    {% for list_elem in characteristic_list%}
+                                                                        <td>{{ list_elem }}</td>
+                                                                    {% endfor %}
+                                                                </tr>
+                                                            {% endfor %}
+                                                        {% endfor %}
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+
+                        </div>
+                        <div class="ProductCard-cart">
+                            <div class="ProductCard-cartElement">
+                                {% for key, value in dict_with_product_elems.items %}
+                                    {% if key == "product_id" %}
+                                        <a class="btn btn_primary" href={% url "remove good for compare" product_id=value %}>
+                                            <img class="btn-icon" src={% static "assets/img/icons/card/cart_white.svg" %} alt="cart_white.svg" />
+                                            <span class="btn-content">{% trans 'Удалить из сравнения' %}</span>
+                                        </a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+
+            </div>
+        {% elif isFalseCategory %}
+            <p>{% trans 'Для сравнения необходимы товары из одной категории' %}</p>
+        {% else %}
+            <p>{% trans 'Товары для сравнения не выбраны' %}</p>
+        {% endif %}
+    </div>
+{% endblock %}

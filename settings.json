@@ -1,0 +1,19 @@
+{
+  "site_name": "MEGANO",
+  "phone_number1": "8-960-600-60-60",
+  "phone_number2": "8(495)666-66-66",
+  "address": "Moscow",
+  "banner_number": 3,
+  "stopping_sales": false,
+  "banner_cache_time": 900,
+  "total_cache_time": 900,
+  "seller_cache_time": 86400,
+  "sellers_products_top_cache_time": 3600,
+  "sellers_products_top_number": 10,
+  "common_products_top_number": 8,
+  "ordinary_delivery_cost": 200,
+  "min_amount_for_free_delivery":  2000,
+  "express_delivery_cost": 500,
+  "num_reviews_per_page": 2,
+  "num_products_per_page": 8
+}

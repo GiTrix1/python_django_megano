@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+    <div class="Section">
+      <div class="wrap">
+        <div class="ProgressPayment">
+          <div class="ProgressPayment-title">{{ message_status }}
+          </div>
+          {% if message_status is None %}
+            <div class="ProgressPayment-icon">
+              <div class="cssload-thecube">
+                <div class="cssload-cube cssload-c1"></div>
+                <div class="cssload-cube cssload-c2"></div>
+                <div class="cssload-cube cssload-c4"></div>
+                <div class="cssload-cube cssload-c3"></div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

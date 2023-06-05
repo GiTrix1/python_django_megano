@@ -1,0 +1,64 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="Section">
+      <div class="wrap">
+        <div class="Cards Cards_blog">
+
+          {# Список карточек товаров #}
+          {% for card in sale_list %}
+
+            <div class="Card">
+              <a class="Card-picture" href="{{ card.link }}">
+                <img src="{{ card.image }}" alt="{{ card.image_alt }}"/>
+              </a>
+              <div class="Card-date">
+                <strong class="Card-date-number">{{ card.date|date:"d" }}</strong>
+                <span class="Card-date-month">{{ card.date|date:"b" }}</span>
+              </div>
+              <div class="Card-date Card-date_to">
+                <strong class="Card-date-number">{{ card.date_to|date:"d" }}</strong>
+                <span class="Card-date-month">{{ card.date_to|date:"b" }}</span>
+              </div>
+              <div class="Card-content">
+                <strong class="Card-title">
+                  <a href="{{ card.link }}">True Color 4K Monitors &amp; All in One Personal Books</a>
+                </strong>
+                <div class="Card-description">{{ card.description }}
+                </div>
+              </div>
+            </div>
+
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block pagination %}
+
+  <div class="Pagination">
+    <div class="Pagination-ins">
+        <a class="Pagination-element Pagination-element_prev" href="#">
+            <img src="{% static "assets/img/icons/prevPagination.svg" %}" alt="prevPagination.svg"/>
+        </a>
+        <a class="Pagination-element Pagination-element_current" href="#">
+            <span class="Pagination-text">1</span>
+        </a>
+        <a class="Pagination-element" href="#">
+            <span class="Pagination-text">2</span>
+        </a>
+        <a class="Pagination-element" href="#">
+            <span class="Pagination-text">3</span>
+        </a>
+        <a class="Pagination-element Pagination-element_prev" href="#">
+            <img src="{% static "assets/img/icons/nextPagination.svg" %}" alt="nextPagination.svg"/>
+        </a>
+    </div>
+  </div>
+
+{% endblock pagination %}

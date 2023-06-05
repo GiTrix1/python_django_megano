@@ -1,0 +1,10 @@
+[
+  {
+    "model": "app_login.profileavatar",
+    "pk": 1,
+    "fields": {
+      "avatar": "user_files/Kyaru.full.2669932.jpg",
+      "img_name": "Kyaru.full.2669932"
+    }
+  }
+]

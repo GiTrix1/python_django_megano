@@ -1,0 +1,38 @@
+[
+  {
+    "model": "market_app.characteristicsgroup",
+    "pk": 1,
+    "fields": {
+      "group_name": "Общие параметры",
+      "category": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "market_app.characteristicsgroup",
+    "pk": 2,
+    "fields": {
+      "group_name": "Процессор",
+      "category": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "market_app.characteristicsgroup",
+    "pk": 3,
+    "fields": {
+      "group_name": "Программное обеспечение",
+      "category": [
+        1,
+        4,
+        2,
+        3,
+        11,
+        13,
+        12
+      ]
+    }
+  }
+]

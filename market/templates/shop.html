@@ -1,0 +1,83 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="Section Section_column Section_columnLeft Section_columnWide">
+      <div class="wrap">
+        <div class="Section-column">
+
+          {% include "include/shipping_and_returns.html" %}
+
+          <div class="Section-columnSection Section-columnSection_mark">
+            <div class="media media_middle">
+              <div class="media-image">
+                  <img src="{% static "assets/img/icons/contacts/phone.svg" %}" alt="phone.svg"/>
+              </div>
+              <div class="media-content">Phone:&#32;
+                <nobr>+8 (200) 800-2000-600</nobr><br>Mobile:&#32;
+                <nobr>+8 (200) 800-2000-650</nobr>
+              </div>
+            </div>
+          </div>
+          <div class="Section-columnSection Section-columnSection_mark">
+            <div class="media media_middle">
+              <div class="media-image">
+                  <img src="{% static "assets/img/icons/contacts/address.svg" %}" alt="address.svg"/>
+              </div>
+              <div class="media-content">
+                Megano Business Center,
+                0012 United States, Los Angeles
+                Creative Street 15/4
+              </div>
+            </div>
+          </div>
+          <div class="Section-columnSection Section-columnSection_mark">
+            <div class="media media_middle">
+              <div class="media-image">
+                  <img src="{% static "assets/img/icons/contacts/mail.svg" %}" alt="mail.svg"/>
+              </div>
+              <div class="media-content">General: hello@ninzio.com<br>Editor: editor@ninzio.com
+              </div>
+            </div>
+          </div>
+
+          {% include "include/follow_us.html" %}
+
+        </div>
+        <div class="Section-content">
+          <div class="row row_verticalCenter row_maxHalf">
+            <div class="row-block">
+              <div class="pict">
+                  <img src="{% static "assets/img/content/home/bigGoods.png" %}" alt="bigGoods.png"/>
+              </div>
+            </div>
+            <div class="row-block">
+              <h2>Megano Store Hystory
+              </h2>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque penatibus et magnis dis parturient montesti, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eutu, pretiumem.
+              </p>
+              <ul>
+                <li>Lorem ipsum dolor sit amet, consectetuer
+                </li>
+                <li>adipiscing elit doli. Aenean commodo ligula
+                </li>
+                <li>eget dolor. Aenean massa. Cumtipsu sociis
+                </li>
+                <li>natoque penatibus et magnis dis parturient
+                </li>
+                <li>montesti, nascetur ridiculus mus. Donec
+                </li>
+                <li>quam felis, ultricies nec, pellentesque eutu
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {% include 'include/popular_products.html' %}
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends "base/order_base.html" %}
+{% load i18n %}
+
+{% block order_step %}
+    <form class="form" action="#" method="post">
+        {% csrf_token %}
+        <div class="Order-block Order-block_OPEN" id="step4">
+            <header class="Section-header Section-header_sm">
+                <h2 class="Section-title">{% trans 'Шаг 4. Подтверждение заказа' %}
+                </h2>
+            </header>
+            <!--+div.Order.-confirmation-->
+            <div class="Order-infoBlock">
+                <div class="Order-personal">
+                    <div class="row">
+                        <div class="row-block">
+                            {% for key, value in order_dict.items %}
+                                {% if key == "full_name" %}
+                                    <div class="Order-info">
+                                        <div class="Order-infoType">{% trans 'ФИО:' %}
+                                        </div>
+                                        <div class="Order-infoContent">{{ value }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key, value in order_dict.items %}
+                                {% if key == "phone" %}
+                                    <div class="Order-info">
+                                        <div class="Order-infoType">{% trans 'Телефон:' %}
+                                        </div>
+                                        <div class="Order-infoContent">{{ value }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key, value in order_dict.items %}
+                                {% if key == "mail" %}
+                                    <div class="Order-info">
+                                        <div class="Order-infoType">E-mail:
+                                        </div>
+                                        <div class="Order-infoContent">{{ value }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="row-block">
+                            {% for key, value in order_dict.items %}
+                                {% if key == "delivery" %}
+                                    <div class="Order-info Order-info_delivery">
+                                        <div class="Order-infoType">{% trans 'Тип доставки:' %}
+                                        </div>
+                                        <div class="Order-infoContent">{{ value }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key, value in order_dict.items %}
+                                {% if key == "city" %}
+                                    <div class="Order-info">
+                                        <div class="Order-infoType">{% trans 'Город:' %}
+                                        </div>
+                                        <div class="Order-infoContent">{{ value }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key, value in order_dict.items %}
+                                {% if key == "address" %}
+                                    <div class="Order-info">
+                                        <div class="Order-infoType">{% trans 'Адрес:' %}
+                                        </div>
+                                        <div class="Order-infoContent">{{ value }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key, value in order_dict.items %}
+                                {% if key == "pay" %}
+                                    <div class="Order-info Order-info_pay">
+                                        <div class="Order-infoType">{% trans 'Оплата:' %}
+                                        </div>
+                                        <div class="Order-infoContent">{{ value }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="Cart Cart_order">
+                    {% for product in products_list %}
+                        <div class="Cart-product">
+                            <div class="Cart-block Cart-block_row">
+                                {% for key, value in product.items %}
+                                    {% if key == "image" %}
+                                    <div class="Cart-block Cart-block_pict"><a class="Cart-pict" href="#"><img class="Cart-img" src="{{value}}" alt="card.jpg" /></a>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                                {% for key, value in product.items %}
+                                    {% if key == "category" %}
+                                    <div class="Cart-block Cart-block_info"><a class="Cart-title" href="#">{{value}}</a>
+                                        {% for key, value in product.items %}
+                                            {% if key == "description" %}
+                                                <div class="Cart-desc">{{value}}
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                                {% for key, value in product.items %}
+                                    {% if key == "price" %}
+                                        <div class="Cart-block Cart-block_price">
+                                            <div class="Cart-price">{{value}} {% trans 'руб.' %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            {% for key, value in product.items %}
+                                {% if key == "qty" %}
+                                    <div class="Cart-block Cart-block_row">
+                                        <div class="Cart-block Cart-block_amount">{{value}} {% trans 'шт.' %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+                    <div class="Cart-total">
+                        <div class="Cart-block Cart-block_total">
+                            <strong class="Cart-title">{% trans 'Доставка:' %}
+                            </strong><span class="Cart-price">{{delivery_cost}} {% trans 'руб.' %}</span>
+                        </div>
+                        <div class="Cart-block Cart-block_total">
+                            <strong class="Cart-title">{% trans 'Итого:' %}
+                            </strong><span class="Cart-price">{{t_price}} {% trans 'руб.' %}</span>
+                        </div>
+                        <div class="Cart-block">
+                            <button class="btn btn_primary btn_lg" type="submit">{% trans 'Оплатить' %}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>    
+{% endblock order_step %}

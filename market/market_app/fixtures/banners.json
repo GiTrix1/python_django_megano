@@ -1,0 +1,47 @@
+[
+  {
+    "model": "market_app.banner",
+    "pk": 1,
+    "fields": {
+      "title1": "Mavic Pro",
+      "title2": "5",
+      "title3": "mini drone",
+      "text1": "Get the best phoneyou ever seen with modern Windows OS plus 70% Off this summer.",
+      "text_link": "Get started",
+      "price": null,
+      "image": "../static/assets/img/content/home/slider.png",
+      "image_alt": "BannerDrone",
+      "link": "#"
+    }
+  },
+  {
+    "model": "market_app.banner",
+    "pk": 2,
+    "fields": {
+      "title1": "Mavic Pro",
+      "title2": "5",
+      "title3": "mini drone",
+      "text1": "Get the best phoneyou ever seen with modern Windows OS plus 70% Off this summer.",
+      "text_link": "Get started",
+      "price": null,
+      "image": "../static/assets/img/content/home/slider.png",
+      "image_alt": "BannerDrone",
+      "link": "#"
+    }
+  },
+  {
+    "model": "market_app.banner",
+    "pk": 3,
+    "fields": {
+      "title1": "Mavic Pro",
+      "title2": "5",
+      "title3": "mini drone",
+      "text1": "Get the best phoneyou ever seen with modern Windows OS plus 70% Off this summer.",
+      "text_link": "Get started",
+      "price": null,
+      "image": "../static/assets/img/content/home/slider.png",
+      "image_alt": "BannerDrone",
+      "link": "#"
+    }
+  }
+]

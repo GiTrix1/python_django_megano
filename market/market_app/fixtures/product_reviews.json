@@ -1,0 +1,52 @@
+[
+  {
+    "model": "market_app.productreview",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "customer": 2,
+      "description": "Шикарный ПК. Чувствую себя ПК Боярином",
+      "date": "2023-02-16T15:14:16.140Z"
+    }
+  },
+  {
+    "model": "market_app.productreview",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "customer": 3,
+      "description": "Очень мощный.\r\nПодсветка приятная.\r\nЦена немного завышена.",
+      "date": "2023-02-16T15:14:57.052Z"
+    }
+  },
+  {
+    "model": "market_app.productreview",
+    "pk": 3,
+    "fields": {
+      "product": 1,
+      "customer": 4,
+      "description": "Всё супер. Все игры на ультрах, проги летают.",
+      "date": "2023-02-16T15:15:24.156Z"
+    }
+  },
+  {
+    "model": "market_app.productreview",
+    "pk": 4,
+    "fields": {
+      "product": 2,
+      "customer": 2,
+      "description": "После поломки самого мощного ПК купил этот. Разницы не увидел, а цена меньше",
+      "date": "2023-02-16T15:16:10.375Z"
+    }
+  },
+  {
+    "model": "market_app.productreview",
+    "pk": 5,
+    "fields": {
+      "product": 3,
+      "customer": 4,
+      "description": "Мамка постоянно заставляет пылесосить.\r\nС этим пылесосом убираться хоть не так противно.",
+      "date": "2023-02-16T15:18:57.597Z"
+    }
+  }
+]

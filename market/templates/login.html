@@ -1,0 +1,36 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+<body>
+{% block content %}
+    <div class="wrapper">
+        <div class="header">
+            <h3 class="sign-in">{% trans "Вход" %}</h3>
+        </div>
+        <div class="clear"></div>
+        <form method="post">
+            <div>
+                {% csrf_token %}
+                <div class="form-group">
+                      <label class="form-label" for="phone">{% trans "Имя пользователя" %}
+                      </label>
+                      {{ auth_form.username }}
+                  </div>
+                  <div class="form-group">
+                      <label class="form-label" for="mail">{% trans "Пароль" %}
+                      </label>
+                      {{ auth_form.password }}
+                  </div>
+            </div>
+            <div>
+                <input type="submit" value="{% trans "Войти" %}">
+            </div>
+            <a class="forgot-label" href="{% url 'password_reset' %}">{% trans "Забыли пароль?" %}</a>
+            <a class="registr" href="{% url 'registration' %}">
+                {% trans "Регистрация" %}
+            </a>
+        </form>
+    </div>
+{% endblock %}
+</body>

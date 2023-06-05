@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+{% load i18n %}
+
+{# Базовый шаблон для страниц оплаты  #}
+
+{% block content %}
+
+    <div class="Section">
+      <div class="wrap">
+        <form class="form Payment" action="#" method="post">
+          <div class="Payment-card">
+
+            {% block payment_card %}
+            {% endblock payment_card %}
+
+          </div>
+
+          <div class="Payment-pay">
+            <button class="btn btn_primary">{% trans 'Оплатить' %}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

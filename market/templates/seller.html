@@ -1,0 +1,42 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="Section Section_column Section_columnLeft Section_columnWide">
+      <div class="wrap">
+
+
+          <article class="Article">
+            <div class="Article-section">
+              <div class="row row_verticalCenter row_maxHalf">
+                <div class="row-block">
+                  <h2>{% trans "О магазине" %}
+                  </h2>
+                  <p>{{ seller.description }}
+                  </p>
+                </div>
+                <div class="row-block">
+                  <div class="pict"><img src="{{ MEDIA_ROOT }}{{ seller.logo.url }}" alt="logo.png"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {% include 'include/popular_products.html' with seller_product=True %}
+
+            <header class="Section-header">
+                <h2 class="Section-title">{% trans "Все товары" %}</h2>
+              </header>
+              <div class="Cards">
+                {% for card in products %}
+                  <div class="Card{% cycle ' ' ' ' ' ' ' ' ' hide_md' ' hide_md' ' hide_md hide_1450' ' hide_md hide_1450' %}">
+                    {% include 'include/card.html' with seller_product=True %}
+                  </div>
+                {% endfor %}
+              </div>
+
+        </article>
+      </div>
+    </div>
+{% endblock content %}
